@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Spacer from '../../components/Spacer'
+import Footer from './components/Footer'
 import Process from './components/Process'
 import Services from './components/Services'
 import WorkPhilosophy from './components/WorkPhilosophy'
@@ -13,7 +14,7 @@ const HomePage: React.FC = () => {
         {/* future logo */}
         <div className="title md:block hidden">TisaCode</div>
         <Spacer size="large" className="md:block hidden" />
-        {/* her message */}
+        <Spacer size="small" className="md:hidden block" />
         <div className="hero-message">
           We craft clean, scalable code that grows with your business, delivering straightforward,
           maintainable solutions that drive real results for you.
@@ -26,7 +27,7 @@ const HomePage: React.FC = () => {
         <Spacer size="large" />
         <Process />
         <Spacer size="large" />
-        <div className="text">© Company Name 2024</div>
+        <Footer />
       </div>
 
       {/* Right static panel */}

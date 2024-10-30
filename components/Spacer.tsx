@@ -14,7 +14,7 @@ const sizeMap = {
 }
 
 const Spacer: React.FC<SpacerProps> = ({ size, className }) => {
-  return <div className={`${sizeMap[size]} ${className}`} />
+  return <div className={`${sizeMap[size]} ${className ? className : ''}`} />
 }
 
 export default Spacer

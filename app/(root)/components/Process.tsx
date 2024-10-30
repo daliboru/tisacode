@@ -55,7 +55,7 @@ const Process: React.FC = () => {
       </div>
       <Spacer size="medium" />
       <div className="w-full">
-        <div className="relative grid grid-cols-2 gap-x-large gap-y-small after:absolute after:top-0 after:bottom-0 after:left-1/2 after:w-1 after:-ml-0.5 after:bg-black">
+        <div className="hidden relative md:grid grid-cols-2 gap-x-large gap-y-small after:absolute after:top-0 after:bottom-0 after:left-1/2 after:w-1 after:-ml-0.5 after:bg-black">
           {board.flat().map(({ id, isText }) => (
             <div key={id}>
               {isText && (
@@ -69,18 +69,33 @@ const Process: React.FC = () => {
           ))}
           <Spacer size="small" />
         </div>
+        {/* Mobile */}
+        <div className="md:hidden flex flex-col">
+          {stages.map((stage, index) => (
+            <>
+              <div key={index} className="flex flex-col">
+                <div className="title">{stage.title}</div>
+                <Spacer size="small" />
+                <div className="text">{stage.description}</div>
+              </div>
+              {index !== stages.length - 1 && <Spacer size="medium" />}
+            </>
+          ))}
+        </div>
       </div>
-      <div className="w-1/2">
-        <div className="border-r-[10px] border-r-transparent border-t-[20px] border-t-black border-l-[10px] border-l-transparent relative float-end left-[10px]" />
-      </div>
-      <Spacer size="medium" />
-      <Spacer size="small" />
-      <div className="place-self-center">
-        <input
-          type="text"
-          placeholder="Insert your goal..."
-          className="subtitle rounded-lg p-2 border-black border-2"
-        />
+      <div className="hidden md:block">
+        <div className="w-1/2">
+          <div className="border-r-[10px] border-r-transparent border-t-[20px] border-t-black border-l-[10px] border-l-transparent relative float-end left-[10px]" />
+        </div>
+        <Spacer size="medium" />
+        <Spacer size="small" />
+        <div className="place-self-center">
+          <input
+            type="text"
+            placeholder="Insert your goal..."
+            className="subtitle rounded-lg p-2 border-black border-2"
+          />
+        </div>
       </div>
     </>
   )
