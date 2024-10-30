@@ -13,12 +13,9 @@ const Footer: React.FC = () => {
         <iframe
           src="https://giphy.com/embed/mi6DsSSNKDbUY"
           className="absolute w-full h-full"
-          frameBorder="0"
           allowFullScreen
         />
       </div>
-      <Spacer size="small" />
-      <div className="text">© TisaCode 2024</div>
     </>
   )
 }

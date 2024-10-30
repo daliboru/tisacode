@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import ContactForm from '../../components/ContactForm'
 import Spacer from '../../components/Spacer'
 import Footer from './components/Footer'
 import Process from './components/Process'
@@ -28,6 +29,10 @@ const HomePage: React.FC = () => {
         <Process />
         <Spacer size="large" />
         <Footer />
+        <Spacer size="large" />
+        <ContactForm />
+        <Spacer size="small" />
+        <div className="text">© TisaCode 2024</div>
       </div>
 
       {/* Right static panel */}
