@@ -40,15 +40,15 @@ const WorkPhilosophy: React.FC = () => {
       <div className="section">Work Philosophy</div>
       <Spacer size="medium" />
       <div className="subtitle">
-        Our approach combines modern engineering practices with timeless principles of software
-        craftsmanship.
+        Our approach blends modern engineering with timeless craftsmanship, treating software as a
+        strategic asset, not a deliverable.
       </div>
       <Spacer size="medium" />
       {commandments.map((commandment, index) => (
         <div key={index}>
-          <div className="flex flex-row border-b-4 border-black pb-medium">
-            <h1 className="w-1/2 title">{commandment.title}</h1>
-            <p className="w-1/2 ml-3 text">{commandment.description}</p>
+          <div className="flex flex-col md:flex-row border-b-4 border-black pb-medium">
+            <h1 className="w-full md:w-1/2 title mb-2 md:mb-0">{commandment.title}</h1>
+            <p className="w-full md:w-1/2 md:ml-3 text">{commandment.description}</p>
           </div>
           {index < commandments.length - 1 && <Spacer size="medium" />}
         </div>

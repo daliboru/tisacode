@@ -2,6 +2,7 @@ import React from 'react'
 
 interface SpacerProps {
   size: 'extrasmall' | 'small' | 'medium' | 'semilarge' | 'large'
+  className?: string
 }
 
 const sizeMap = {
@@ -12,8 +13,8 @@ const sizeMap = {
   large: 'h-large',
 }
 
-const Spacer: React.FC<SpacerProps> = ({ size }) => {
-  return <div className={sizeMap[size]} />
+const Spacer: React.FC<SpacerProps> = ({ size, className }) => {
+  return <div className={`${sizeMap[size]} ${className}`} />
 }
 
 export default Spacer
