@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import Spacer from '../../components/Spacer'
 import Process from './components/Process'
@@ -6,16 +7,16 @@ import WorkPhilosophy from './components/WorkPhilosophy'
 
 const HomePage: React.FC = () => {
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <div className="min-h-screen md:h-screen md:overflow-hidden flex flex-col-reverse md:flex-row w-full">
       {/* Left scrollable panel */}
-      <div className="w-1/2 overflow-y-auto pb-[6px] px-[22px] pt-[22px]">
+      <div className="w-full md:w-1/2 md:overflow-y-auto md:overflow-hidden px-small pb-extrasmall md:px-medium pt-medium">
         {/* future logo */}
-        <div className="title">Logo</div>
-        <Spacer size="large" />
+        <div className="title md:block hidden">TisaCode</div>
+        <Spacer size="large" className="md:block hidden" />
         {/* her message */}
         <div className="hero-message">
-          Your partner in building evolutionary architectures and sustainable codebases, where
-          developer expertise drives business outcomes through technical craftsmanship.
+          We craft clean, scalable code that grows with your business, delivering straightforward,
+          maintainable solutions that drive real results for you.
         </div>
         <Spacer size="large" />
         {/* SECTIONS */}
@@ -29,10 +30,10 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* Right static panel */}
-      <div className="w-1/2 p-6 bg-black">
-        <div className=" action">we solve problems in the software world.</div>
-      </div>
-      {/* <div className="relative w-1/2 p-6">
+      {/* <div className="w-full md:w-1/2 p-6 bg-black">
+        <div className="action">Software is a service, not a commodity.</div>
+      </div> */}
+      <div className="relative w-full md:w-1/2 px-small py-medium md:p-medium">
         <Image
           src="/images/background.jpg"
           alt="background"
@@ -40,8 +41,8 @@ const HomePage: React.FC = () => {
           className="object-cover"
           sizes="50vw"
         />
-        <div className="relative action">we solve problems in the software world.</div>
-      </div> */}
+        <div className="relative action">Software is a service, not a commodity.</div>
+      </div>
     </div>
   )
 }
