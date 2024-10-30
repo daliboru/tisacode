@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 @layer utilities {
-  .action{
-    @apply text-8xl uppercase font-black text-orange font-inter;
+  .action {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase font-black text-orange font-inter;
   }
 
-  .section{
-    @apply text-5xl uppercase font-black text-black font-inter;
+  .section {
+    @apply text-3xl sm:text-4xl md:text-5xl uppercase font-black text-black font-inter;
   }
-
+  
   .title {
-    @apply text-3xl font-bold text-black font-inter;
+    @apply text-xl sm:text-2xl md:text-3xl font-bold text-black font-inter;
   }
-
+  
   .subtitle {
-    @apply text-xl font-normal text-black font-sf-pro;
+    @apply text-lg sm:text-xl font-normal text-black font-sf-pro;
   }
-
+  
   .hero-message {
-    @apply text-2xl font-normal text-black font-sf-pro;
+    @apply text-xl sm:text-2xl font-normal text-black font-sf-pro;
   }
-
+  
   .text {
-    @apply text-base font-normal text-black font-sf-pro;
+    @apply text-sm sm:text-base font-normal text-black font-sf-pro;
   }
 }
