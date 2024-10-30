@@ -12,7 +12,7 @@ const config: Config = {
         white: {
           DEFAULT: '#FFFFFF',
         },
-        orange: '#FB8B02',
+        orange: '#FFBF00',
         black: {
           DEFAULT: '#2a2a2a',
         },
