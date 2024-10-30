@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <div className="relative w-full pb-[57%]">
         <iframe
           src="https://giphy.com/embed/mi6DsSSNKDbUY"
-          className="absolute w-full h-full"
+          className="absolute w-full h-full "
           allowFullScreen
         />
       </div>
