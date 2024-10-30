@@ -4,7 +4,10 @@ import Spacer from '../../../components/Spacer'
 const Footer: React.FC = () => {
   return (
     <>
-      <div className="section">Let&apos;s do it!</div>
+      <div className="section">
+        Leverage code,
+        <br /> drive value.
+      </div>
       <Spacer size="medium" />
       <div className="relative w-full pb-[57%]">
         <iframe

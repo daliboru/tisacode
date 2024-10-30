@@ -72,14 +72,14 @@ const Process: React.FC = () => {
         {/* Mobile */}
         <div className="md:hidden flex flex-col">
           {stages.map((stage, index) => (
-            <>
-              <div key={index} className="flex flex-col">
+            <div key={index}>
+              <div className="flex flex-col">
                 <div className="title">{stage.title}</div>
                 <Spacer size="small" />
                 <div className="text">{stage.description}</div>
               </div>
               {index !== stages.length - 1 && <Spacer size="medium" />}
-            </>
+            </div>
           ))}
         </div>
       </div>
