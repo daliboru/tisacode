@@ -14,7 +14,7 @@ const inter = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Company Name',
+  title: 'Tisacode',
   description: 'SOFTWARE | PRODUCT | AI | LEAN',
 }
 
