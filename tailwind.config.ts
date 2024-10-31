@@ -12,10 +12,14 @@ const config: Config = {
         white: {
           DEFAULT: '#FFFFFF',
         },
-        orange: '#FFBF00',
+        orange: {
+          dark: '#FB8B02',
+          DEFAULT: '#FFA500',
+        },
         black: {
           DEFAULT: '#2a2a2a',
         },
+        blue: '#46A7EC',
       },
       fontFamily: {
         inter: ['var(--font-inter)'],

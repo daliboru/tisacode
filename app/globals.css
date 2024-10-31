@@ -2,9 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* Webkit browsers */
+.scrollable-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.scrollable-container {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+.scrollable-container {
+  -ms-overflow-style: none;
+}
+
 @layer utilities {
   .action {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase font-black text-orange font-inter;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase font-black text-orange-dark font-inter;
   }
 
   .section {

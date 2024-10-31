@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen md:h-screen md:overflow-hidden flex flex-col-reverse md:flex-row w-full">
       {/* Left scrollable panel */}
-      <div className="w-full md:w-1/2 md:overflow-y-auto md:overflow-hidden px-small pb-extrasmall md:px-medium pt-medium">
+      <div className="w-full md:w-1/2 md:overflow-y-auto md:overflow-hidden px-small pb-extrasmall md:px-medium pt-medium scrollable-container">
         <Logo />
         <Spacer size="large" className="md:block " />
         <div className="hero-message">
