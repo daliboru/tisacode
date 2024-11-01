@@ -29,7 +29,7 @@ function ContactForm() {
           {state.errors && <Spacer size="small" />}
           <ValidationError prefix="Email" field="email" errors={state.errors} />
           <Spacer size="medium" />
-          <label htmlFor="textarea" className="title">
+          <label htmlFor="message" className="title">
             Message
           </label>
           <Spacer size="small" />
