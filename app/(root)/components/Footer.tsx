@@ -14,6 +14,7 @@ const Footer: React.FC = () => {
           src="https://giphy.com/embed/mi6DsSSNKDbUY"
           className="absolute w-full h-full "
           allowFullScreen
+          title="Rocket launch"
         />
       </div>
     </>
