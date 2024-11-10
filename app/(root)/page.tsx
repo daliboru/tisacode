@@ -3,6 +3,7 @@ import React from 'react'
 import ContactForm from '../../components/ContactForm'
 import Logo from '../../components/Logo'
 import Spacer from '../../components/Spacer'
+import CTA from './components/CTA'
 import Footer from './components/Footer'
 import Process from './components/Process'
 import Services from './components/Services'
@@ -27,11 +28,11 @@ const HomePage: React.FC = () => {
         <Spacer size="large" />
         <Process />
         <Spacer size="large" />
-        <Footer />
+        <CTA />
         <Spacer size="large" />
         <ContactForm />
         <Spacer size="small" />
-        <div className="text">© TisaCode 2024</div>
+        <Footer />
       </div>
 
       {/* Right static panel */}
