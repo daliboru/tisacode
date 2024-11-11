@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
         href="https://www.linkedin.com/company/tisacode"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="TisaCode's LinkedIn page"
       >
         <svg
           className="w-6 h-6"
