@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
-import ContactForm from '../../components/ContactForm'
-import Logo from '../../components/Logo'
-import Spacer from '../../components/Spacer'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
-import Process from './components/Process'
-import Services from './components/Services'
-import WorkPhilosophy from './components/WorkPhilosophy'
+import ContactForm from '../components/ContactForm'
+import Logo from '../components/Logo'
+import Spacer from '../components/Spacer'
+import CTA from './_components/landing/CTA'
+import Footer from './_components/landing/Footer'
+import Process from './_components/landing/Process'
+import Services from './_components/landing/Services'
+import WorkPhilosophy from './_components/landing/WorkPhilosophy'
 
 const HomePage: React.FC = () => {
   return (
@@ -43,6 +43,7 @@ const HomePage: React.FC = () => {
           fill
           className="object-cover"
           sizes="50vw"
+          priority
         />
         <div className="relative action">Software is a service, not a commodity.</div>
       </div>
