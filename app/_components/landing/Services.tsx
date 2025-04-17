@@ -52,7 +52,9 @@ const services = [
 const Services: React.FC = () => {
   return (
     <>
-      <div className="section">Technical Services</div>
+      <div id="services" className="section">
+        Technical Services
+      </div>
       <Spacer size="medium" />
       <div className="subtitle">
         End-to-end software engineering services focused on maintainability, scalability, and

@@ -11,9 +11,9 @@ import WorkshopQuote from './_components/WorkshopQuote'
 import WorkshopSessions from './_components/WorkshopSessions'
 
 export const metadata: Metadata = {
-  title: 'Tisacode | AI-Era Startup Workshop',
+  title: 'Tisacode | Idea Resurrection Workshop',
   description:
-    'Join us for an AI-Era Startup Workshop where we teach you to build something so original, even the algorithms will do a double-take.',
+    'A three-part workshop for people with brilliant ideas collecting dust in their mental attics. Time to build what AI can only dream about.',
 }
 
 export default function StartupWorkshopPage() {
@@ -35,7 +35,7 @@ export default function StartupWorkshopPage() {
         <WorkshopDetails />
         <Spacer size="large" />
 
-        <div className="title">Reserve Your Spot</div>
+        <div className="title">Resurrect Your Idea</div>
         <Spacer size="small" />
         <WorkshopForm />
         <Spacer size="large" />
@@ -50,13 +50,13 @@ export default function StartupWorkshopPage() {
       <div className="relative w-full md:w-1/2 px-small py-medium md:p-medium">
         <Image
           src="/images/startup-workshop.jpg"
-          alt="AI-Era Startup Workshop"
+          alt="Idea Resurrection Workshop"
           fill
           className="object-cover"
           sizes="50vw"
           priority
         />
-        <div className="action sticky top-0">Build what AI can&apos;t imagine.</div>
+        <div className="action sticky top-0">That idea you abandoned? It misses you.</div>
       </div>
     </div>
   )

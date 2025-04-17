@@ -10,7 +10,9 @@ function ContactForm() {
   }
   return (
     <>
-      <div className="section">Contact Us</div>
+      <div id="contact" className="section">
+        Contact Us
+      </div>
       <Spacer size="medium" />
       <div className="flex w-full flex-col">
         <form onSubmit={handleSubmit}>

@@ -4,27 +4,29 @@ import Spacer from '../../../components/Spacer'
 const WorkshopDetails: React.FC = () => {
   return (
     <>
-      <div className="title">Who Should Join?</div>
+      <div className="title">Who Needs This?</div>
       <Spacer size="small" />
       <div className="text">
-        • People who&apos;ve had an idea in the shower and forgotten it by breakfast
+        • Shower-thought millionaires whose ideas evaporate with the steam
         <br />
-        • Professionals tired of building someone else&apos;s dream
-        <br />
-        • Anyone who&apos;s ever said &quot;I could build something better than this&quot;
-        <br />• Humans who want to create something AI can&apos;t replicate
+        • Corporate hostages with Stockholm syndrome and a side hustle itch
+        <br />•{' '}
+        {`People who've uttered "I could build that better" more than three times this month`}
+        <br />•{' '}
+        {`Anyone who's tired of watching others build mediocre versions of their brilliant ideas`}
       </div>
       <Spacer size="large" />
 
-      <div className="title">When & Where</div>
+      <div className="title">The When & Where</div>
       <Spacer size="small" />
       <div className="text">
         Three consecutive Thursdays, starting June 6th.
         <br />
-        7-9pm CET. Online, interactive, and surprisingly fun.
+        7-9pm CET. Online, with cameras on (yes, we want to see your face when your idea finally
+        clicks).
         <br />
-        Recordings available, but live attendance strongly encouraged for maximum chaos and
-        creativity.
+        Recordings available for the responsible adults among you, but live attendance comes with
+        the adrenaline rush you need to actually build something.
       </div>
     </>
   )

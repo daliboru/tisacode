@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import ContactForm from '../components/ContactForm'
 import Logo from '../components/Logo'
+import Menu from '../components/Menu'
 import Spacer from '../components/Spacer'
 import CTA from './_components/landing/CTA'
 import Footer from './_components/landing/Footer'
@@ -14,7 +15,10 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen md:h-screen md:overflow-hidden flex flex-col-reverse md:flex-row w-full">
       {/* Left scrollable panel */}
       <div className="w-full md:w-1/2 md:overflow-y-auto md:overflow-hidden px-small pb-extrasmall md:px-medium pt-medium scrollable-container">
-        <Logo />
+        <div className="flex justify-between items-center">
+          <Logo />
+          <Menu />
+        </div>
         <Spacer size="large" className="md:block " />
         <div className="hero-message">
           We craft clean, scalable code that grows with your business, delivering straightforward,
