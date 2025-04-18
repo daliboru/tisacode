@@ -4,12 +4,12 @@ import localFont from 'next/font/local'
 import './globals.css'
 
 const sfPro = localFont({
-  src: '../public/fonts/SF_PRO.otf',
+  src: '../../public/fonts/SF_PRO.otf',
   variable: '--font-sf-pro',
 })
 
 const inter = localFont({
-  src: '../public/fonts/Inter.ttf',
+  src: '../../public/fonts/Inter.ttf',
   variable: '--font-inter',
   weight: '100 900',
 })

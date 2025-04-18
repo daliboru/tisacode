@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Footer from '../../app/_components/landing/Footer'
-import Logo from '../../components/Logo'
-import Spacer from '../../components/Spacer'
-import WorkshopDetails from './_components/WorkshopDetails'
-import WorkshopForm from './_components/WorkshopForm'
-import WorkshopHeader from './_components/WorkshopHeader'
-import WorkshopQuote from './_components/WorkshopQuote'
-import WorkshopSessions from './_components/WorkshopSessions'
+import Logo from '../../../components/Logo'
+import Spacer from '../../../components/Spacer'
+import Footer from '../_components/landing/Footer'
+import WorkshopDetails from '../_components/startup-workshop/WorkshopDetails'
+import WorkshopForm from '../_components/startup-workshop/WorkshopForm'
+import WorkshopHeader from '../_components/startup-workshop/WorkshopHeader'
+import WorkshopQuote from '../_components/startup-workshop/WorkshopQuote'
+import WorkshopSessions from '../_components/startup-workshop/WorkshopSessions'
 
 export const metadata: Metadata = {
   title: 'Tisacode | Idea Resurrection Workshop',
