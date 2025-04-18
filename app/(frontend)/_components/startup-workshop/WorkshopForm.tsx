@@ -1,52 +1,75 @@
 'use client'
 
+import { createSubscriberFromWorkshop } from '@/lib/actions/subscribers'
+import { WorkshopFormInputs, workshopFormSchema } from '@/lib/validations/workshop'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 
-function WorkshopForm() {
+type Props = {
+  path: string
+}
+
+function WorkshopForm({ path }: Props) {
   const [submitted, setSubmitted] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '' })
-  const [error, setError] = useState('')
+  const [serverError, setServerError] = useState('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-    setError('')
-  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<WorkshopFormInputs>({
+    resolver: zodResolver(workshopFormSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+    },
+    mode: 'onChange',
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!form.name.trim() || !form.email.trim()) {
-      setError('Your idea deserves a name and email at minimum.')
-      return
+  const onSubmit = async (data: WorkshopFormInputs) => {
+    try {
+      const response = await createSubscriberFromWorkshop(data, path)
+
+      if (response.success) {
+        setSubmitted(true)
+      } else {
+        setServerError(response.message)
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setServerError('Something went wrong. Please try again.')
     }
-    // Here you would send the data to your backend or service
-    setSubmitted(true)
   }
 
   if (submitted) {
     return (
       <div className="text-center font-sf-pro text-xl">
-        🎉 Your idea is doing a happy dance, {form.name || 'mysterious creator'}! <br />
-        Check your inbox for workshop details (we promise not to send you cryptocurrency opportunities).
+        🎉 Your idea is doing a happy dance! <br />
+        Check your inbox for workshop details (we promise not to send you cryptocurrency
+        opportunities).
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
+      {serverError && (
+        <div className="text-orange-dark text-sm mb-4 p-2 bg-orange-50 rounded">{serverError}</div>
+      )}
       <div className="w-full mb-4">
         <label htmlFor="name" className="block text-black font-bold mb-1">
           Your Creator Name
         </label>
         <input
           id="name"
-          name="name"
+          {...register('name')}
           type="text"
           autoComplete="name"
           className="w-full rounded-lg border-2 border-orange-dark p-extrasmall font-inter"
-          value={form.name}
-          onChange={handleChange}
           placeholder="The name your future fans will know you by"
         />
+        {errors.name && <p className="text-orange-dark text-sm mt-1">{errors.name.message}</p>}
       </div>
       <div className="w-full mb-4">
         <label htmlFor="email" className="block text-black font-bold mb-1">
@@ -54,21 +77,20 @@ function WorkshopForm() {
         </label>
         <input
           id="email"
-          name="email"
+          {...register('email')}
           type="email"
           autoComplete="email"
           className="w-full rounded-lg border-2 border-orange-dark p-extrasmall font-inter"
-          value={form.email}
-          onChange={handleChange}
           placeholder="Where we'll send workshop details"
         />
+        {errors.email && <p className="text-orange-dark text-sm mt-1">{errors.email.message}</p>}
       </div>
-      {error && <div className="text-orange-dark font-bold mb-2">{error}</div>}
       <button
         type="submit"
-        className="w-full bg-orange-dark text-white font-sf-pro font-bold px-large py-small rounded-lg shadow hover:bg-blue transition"
+        disabled={isSubmitting}
+        className="w-full bg-orange-dark text-white font-sf-pro font-bold px-large py-small rounded-lg shadow hover:bg-blue transition disabled:opacity-50"
       >
-        Free Your Idea From Captivity
+        {isSubmitting ? 'Submitting...' : 'Free Your Idea From Captivity'}
       </button>
     </form>
   )
