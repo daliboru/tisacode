@@ -6,11 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-type Props = {
-  path: string
-}
-
-function WorkshopForm({ path }: Props) {
+function WorkshopForm() {
   const [submitted, setSubmitted] = useState(false)
   const [serverError, setServerError] = useState('')
 
@@ -29,7 +25,7 @@ function WorkshopForm({ path }: Props) {
 
   const onSubmit = async (data: WorkshopFormInputs) => {
     try {
-      const response = await createSubscriberFromWorkshop(data, path)
+      const response = await createSubscriberFromWorkshop(data)
 
       if (response.success) {
         setSubmitted(true)

@@ -1,10 +1,9 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
 import { getServerValues } from '../utils'
 import { WorkshopFormInputs, workshopFormSchema } from '../validations/workshop'
 
-export async function createSubscriberFromWorkshop(data: WorkshopFormInputs, path: string) {
+export async function createSubscriberFromWorkshop(data: WorkshopFormInputs) {
   try {
     const { payload } = await getServerValues()
 
@@ -47,7 +46,6 @@ export async function createSubscriberFromWorkshop(data: WorkshopFormInputs, pat
       },
     })
 
-    revalidatePath(path)
     return {
       success: true,
       message: 'You have successfully applied!',
