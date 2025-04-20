@@ -20,10 +20,10 @@ const WorkshopDetails: React.FC = () => {
       <div className="title">The When & Where</div>
       <Spacer size="small" />
       <div className="text">
-        Three consecutive Thursdays, starting June 6th.
+        Three consecutive Fridays, starting May 16th. 7-9pm CET.
         <br />
-        7-9pm CET. Online, with cameras on (yes, we want to see your face when your idea finally
-        clicks).
+        In person (TBA) and Online - with cameras on (yes, we want to see your face when your idea
+        finally clicks).
         <br />
         Recordings available for the responsible adults among you, but live attendance comes with
         the adrenaline rush you need to actually build something.

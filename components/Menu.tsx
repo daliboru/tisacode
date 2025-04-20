@@ -100,7 +100,6 @@ const Menu: React.FC = () => {
                 <Link
                   href="/startup-workshop"
                   className="block px-4 py-2 hover:bg-gray-100 transition"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   AI-Era Startup Workshop
                 </Link>

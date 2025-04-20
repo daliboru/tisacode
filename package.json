@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "devsafe": "rm -rf .next &&   next dev",
     "generate:importmap": "payload generate:importmap",
     "generate:types": "payload generate:types",
