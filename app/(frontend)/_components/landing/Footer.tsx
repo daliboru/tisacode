@@ -4,7 +4,7 @@ import React from 'react'
 const Footer: React.FC = () => {
   return (
     <footer className="flex justify-between">
-      <div className="text">© TisaCode 2024</div>
+      <div className="text">© TisaCode 2025</div>
       <Link
         href="https://www.linkedin.com/company/tisacode"
         target="_blank"

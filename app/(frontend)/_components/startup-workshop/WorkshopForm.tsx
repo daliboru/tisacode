@@ -43,7 +43,7 @@ function WorkshopForm() {
   if (submitted) {
     return (
       <div className="text-center font-sf-pro text-xl">
-        🎉 Your idea is doing a happy dance! <br />
+        🎉 Your future self is doing a happy dance! <br />
         Check your inbox for workshop details (we promise not to send you cryptocurrency
         opportunities).
       </div>
