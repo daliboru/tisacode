@@ -7,6 +7,7 @@ import { buildConfig } from 'payload'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
+import { resendAdapter } from '@payloadcms/email-resend'
 import { Media } from './collections/Media'
 import Subscribers from './collections/Subscribers'
 import { Users } from './collections/Users'
@@ -39,4 +40,9 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
+  email: resendAdapter({
+    apiKey: process.env.RESEND_API_KEY!,
+    defaultFromAddress: 'dalibor@tisacode.com',
+    defaultFromName: 'Dalibor from Tisacode',
+  }),
 })

@@ -4,12 +4,12 @@ import Spacer from '../../../../components/Spacer'
 const WorkshopHeader: React.FC = () => {
   return (
     <>
-      <div className="section">Idea Resurrection Workshop</div>
+      <div className="section">Entrepreneurship First Principles Workshop</div>
       <Spacer size="medium" />
 
       <div className="hero-message">
-        {`Your brilliant idea is trapped in your head, banging on the walls of your skull, 
-        begging to be set free. This workshop is the jailbreak it's been waiting for.`}
+        {`Join us on May 15th at 5pm CET (8am PT) for a 1h + Q&A that will transform how you think about entrepreneurship. 
+        Learn the fundamental principles that separate successful founders from the rest.`}
       </div>
     </>
   )

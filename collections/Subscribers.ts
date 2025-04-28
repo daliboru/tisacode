@@ -1,4 +1,7 @@
 import { CollectionConfig } from 'payload'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 const Subscribers: CollectionConfig = {
   slug: 'subscribers',
@@ -11,12 +14,15 @@ const Subscribers: CollectionConfig = {
       name: 'email',
       type: 'email',
       required: true,
-      unique: true,
     },
     {
       name: 'name',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'background',
+      type: 'text',
     },
     {
       name: 'source',
@@ -30,6 +36,14 @@ const Subscribers: CollectionConfig = {
       required: true,
     },
     {
+      name: 'workshopId',
+      type: 'text',
+      admin: {
+        description: 'Identifier for the specific workshop the subscriber signed up for',
+        condition: data => data.source === 'workshop',
+      },
+    },
+    {
       name: 'status',
       type: 'select',
       defaultValue: 'active',
@@ -40,7 +54,33 @@ const Subscribers: CollectionConfig = {
       ],
     },
   ],
+  indexes: [
+    {
+      fields: ['email', 'workshopId'],
+      unique: true,
+    },
+  ],
   timestamps: true,
+  hooks: {
+    afterOperation: [
+      async ({ operation, result }) => {
+        if (operation === 'create') {
+          if (process.env.NODE_ENV === 'production') {
+            try {
+              await resend.contacts.create({
+                audienceId: process.env.NEXT_PUBLIC_AUDIENCE_ID!,
+                email: result.email,
+                firstName: result.name.split(' ')[0],
+                unsubscribed: false,
+              })
+            } catch (error) {
+              console.log(error)
+            }
+          }
+        }
+      },
+    ],
+  },
 }
 
 export default Subscribers

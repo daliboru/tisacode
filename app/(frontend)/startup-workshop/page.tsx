@@ -7,13 +7,14 @@ import Footer from '../_components/landing/Footer'
 import WorkshopDetails from '../_components/startup-workshop/WorkshopDetails'
 import WorkshopForm from '../_components/startup-workshop/WorkshopForm'
 import WorkshopHeader from '../_components/startup-workshop/WorkshopHeader'
+import WorkshopInstructor from '../_components/startup-workshop/WorkshopInstructor'
 import WorkshopQuote from '../_components/startup-workshop/WorkshopQuote'
 import WorkshopSessions from '../_components/startup-workshop/WorkshopSessions'
 
 export const metadata: Metadata = {
-  title: 'Tisacode | Idea Resurrection Workshop',
+  title: 'Tisacode | Startup First Principles Workshop',
   description:
-    'A three-part workshop for people with brilliant ideas collecting dust in their mental attics. Time to build what AI can only dream about.',
+    'A 1-hour online workshop + Q&A on May 16th exploring entrepreneurship first principles: good questions, leverage, edges, lean methodology, AI integration, side hustles, and programming.',
 }
 
 export default function StartupWorkshopPage() {
@@ -32,10 +33,13 @@ export default function StartupWorkshopPage() {
         <WorkshopSessions />
         <Spacer size="large" />
 
+        <WorkshopInstructor />
+        <Spacer size="large" />
+
         <WorkshopDetails />
         <Spacer size="large" />
 
-        <div className="title">Resurrect Your Idea</div>
+        <div className="title">Join the Workshop</div>
         <Spacer size="small" />
         <WorkshopForm />
         <Spacer size="large" />
@@ -50,13 +54,15 @@ export default function StartupWorkshopPage() {
       <div className="relative w-full md:w-1/2 px-small py-medium md:p-medium">
         <Image
           src="/images/startup-workshop.jpg"
-          alt="Idea Resurrection Workshop"
+          alt="Entrepreneurship First Principles Workshop"
           fill
           className="object-cover"
           sizes="50vw"
           priority
         />
-        <div className="action sticky top-0">That idea you abandoned? It misses you.</div>
+        <div className="action sticky top-0 max-w-full break-words hyphens-auto">
+          Master the first principles of entrepreneurship.
+        </div>
       </div>
     </div>
   )

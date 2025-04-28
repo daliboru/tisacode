@@ -4,29 +4,30 @@ import Spacer from '../../../../components/Spacer'
 const WorkshopDetails: React.FC = () => {
   return (
     <>
-      <div className="title">Who Needs This?</div>
+      <div className="title">Who Should Attend?</div>
       <Spacer size="small" />
       <div className="text">
-        • Shower-thought millionaires whose ideas evaporate with the steam
+        • Aspiring entrepreneurs looking to validate their ideas
         <br />
-        • Corporate hostages with Stockholm syndrome and a side hustle itch
-        <br />•{' '}
-        {`People who've uttered "I could build that better" more than three times this month`}
-        <br />•{' '}
-        {`Anyone who's tired of watching others build mediocre versions of their brilliant ideas`}
+        • Side hustlers ready to take their projects to the next level
+        <br />
+        • Professionals interested in first-principles thinking
+        <br />• Anyone who wants to build something meaningful in the AI era
       </div>
       <Spacer size="large" />
 
-      <div className="title">The When & Where</div>
+      <div className="title">Workshop Details</div>
       <Spacer size="small" />
       <div className="text">
-        Three consecutive Fridays, starting May 16th. 7-9pm CET.
+        <strong>Date:</strong> May 16th, 2024
         <br />
-        In person (TBA) and Online - with cameras on (yes, we want to see your face when your idea
-        finally clicks).
+        <strong>Time:</strong> 5pm CET (8am PT), 1h + Q&A
         <br />
-        Recordings available for the responsible adults among you, but live attendance comes with
-        the adrenaline rush you need to actually build something.
+        <strong>Format:</strong> Online with live interaction
+        <br />
+        <strong>Cost:</strong> Free, but registration required
+        <br />
+        <strong>Recording:</strong> Available for registered participants
       </div>
     </>
   )

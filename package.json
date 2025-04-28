@@ -16,6 +16,7 @@
     "@formspree/react": "^2.5.1",
     "@hookform/resolvers": "^5.0.1",
     "@payloadcms/db-vercel-postgres": "^3.35.1",
+    "@payloadcms/email-resend": "^3.35.1",
     "@payloadcms/next": "^3.35.1",
     "@payloadcms/payload-cloud": "^3.35.1",
     "@payloadcms/richtext-lexical": "^3.35.1",
@@ -26,6 +27,7 @@
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
     "react-hook-form": "^7.55.0",
+    "resend": "^4.4.1",
     "sharp": "0.33.5",
     "zod": "^3.24.3"
   },

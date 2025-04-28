@@ -159,7 +159,12 @@ export interface Subscriber {
   id: string;
   email: string;
   name: string;
+  background?: string | null;
   source: 'newsletter' | 'workshop' | 'contact' | 'other';
+  /**
+   * Identifier for the specific workshop the subscriber signed up for
+   */
+  workshopId?: string | null;
   status?: ('active' | 'unsubscribed' | 'bounced') | null;
   updatedAt: string;
   createdAt: string;
@@ -265,7 +270,9 @@ export interface MediaSelect<T extends boolean = true> {
 export interface SubscribersSelect<T extends boolean = true> {
   email?: T;
   name?: T;
+  background?: T;
   source?: T;
+  workshopId?: T;
   status?: T;
   updatedAt?: T;
   createdAt?: T;

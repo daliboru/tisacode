@@ -4,28 +4,31 @@ import Spacer from '../../../../components/Spacer'
 const WorkshopSessions: React.FC = () => {
   return (
     <>
-      <div className="title">{'The Liberation Process'}</div>
+      <div className="title">First Principles of Entrepreneurship</div>
       <Spacer size="small" />
       <div className="text">
         <div className="mb-4">
-          <span className="font-bold">{`Session 1: "Idea Archaeology"`}</span>
-          <p>{`We'll excavate that idea you buried under "someday" and "maybe later." 
-          Dust it off, examine it under the light of 2024, and see if it still has a pulse. 
-          Spoiler alert: it does, and it's stronger than you think.`}</p>
+          <span className="font-bold">{`Asking the Right Questions`}</span>
+          <p>{`Learn how to frame problems in ways that lead to breakthrough solutions. 
+          The quality of your questions determines the quality of your business.`}</p>
         </div>
 
         <div className="mb-4">
-          <span className="font-bold">{`Session 2: "Minimum Viable Rebellion"`}</span>
-          <p>{`While everyone else is writing business plans that will never see daylight, 
-          you'll build something real using AI tools as your accomplices. By the end of this session, 
-          you'll have something that works—ugly, wobbly, but gloriously alive.`}</p>
+          <span className="font-bold">{`Finding Your Edge & Leverage`}</span>
+          <p>{`Discover your unfair advantages and how to apply leverage to multiply your impact. 
+          We'll explore how to identify and exploit asymmetric opportunities in the market.`}</p>
         </div>
 
         <div className="mb-4">
-          <span className="font-bold">{`Session 3: "The Premature Launch"`}</span>
-          <p>{`Your creation isn't ready? Perfect. We'll push it out of the nest anyway and watch it
-            either soar or plummet spectacularly. Either way, you'll learn more in this controlled
-            crash than months of theoretical planning.`}</p>
+          <span className="font-bold">{`Lean Methodology & Rapid Iteration`}</span>
+          <p>{`Master the art of building, measuring, and learning with minimal resources. 
+          Learn how to validate ideas quickly and pivot when necessary.`}</p>
+        </div>
+
+        <div className="mb-4">
+          <span className="font-bold">{`AI Integration & Programming`}</span>
+          <p>{`Harness AI as your co-founder and learn how programming skills can accelerate your 
+          side hustle. We'll cover practical tools and workflows for non-technical founders.`}</p>
         </div>
       </div>
     </>

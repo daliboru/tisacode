@@ -8,6 +8,8 @@ export const workshopFormSchema = z.object({
     .max(100, 'Name is too long')
     .trim(),
   email: z.string().email('Invalid email address').min(1, 'Email is required').trim(),
+  background: z.string().optional(),
+  workshopId: z.string(),
 })
 
 export type WorkshopFormInputs = z.infer<typeof workshopFormSchema>

@@ -5,9 +5,15 @@ import Spacer from './Spacer'
 
 function ContactForm() {
   const [state, handleSubmit] = useForm('xyzyezgv')
+
   if (state.succeeded) {
-    return <p className="title">We have a liftoff! 🚀</p>
+    return (
+      <div className="text-center">
+        <p className="title mb-4">We have a liftoff! 🚀</p>
+      </div>
+    )
   }
+
   return (
     <>
       <div id="contact" className="section">
