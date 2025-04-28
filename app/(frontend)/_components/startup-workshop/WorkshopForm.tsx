@@ -3,16 +3,19 @@
 import { createSubscriberFromWorkshop } from '@/lib/actions/subscribers'
 import { WorkshopFormInputs, workshopFormSchema } from '@/lib/validations/workshop'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 function WorkshopForm() {
   const [submitted, setSubmitted] = useState(false)
   const [serverError, setServerError] = useState('')
+  const [customTimeSelected, setCustomTimeSelected] = useState(false)
 
   const {
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<WorkshopFormInputs>({
     resolver: zodResolver(workshopFormSchema),
@@ -20,15 +23,33 @@ function WorkshopForm() {
       name: '',
       email: '',
       background: '',
+      timePreference: '',
       workshopId: 'startup-first-principles-may-2025',
     },
     mode: 'onChange',
   })
 
-  const onSubmit = async (data: WorkshopFormInputs) => {
-    try {
-      const response = await createSubscriberFromWorkshop(data)
+  const timePreference = watch('timePreference')
 
+  useEffect(() => {
+    setCustomTimeSelected(timePreference === 'other')
+    // If switching away from 'other', clear the custom input
+    if (timePreference !== 'other') {
+      setValue('customTime', '')
+    }
+  }, [timePreference, setValue])
+
+  const onSubmit = async (data: WorkshopFormInputs & { customTime?: string }) => {
+    // If "other" is selected, use the custom time input
+    const finalData = {
+      ...data,
+      timePreference:
+        data.timePreference === 'other' && data.customTime
+          ? data.customTime
+          : data.timePreference,
+    }
+    try {
+      const response = await createSubscriberFromWorkshop(finalData)
       if (response.success) {
         setSubmitted(true)
       } else {
@@ -105,6 +126,36 @@ function WorkshopForm() {
         </select>
         {errors.background && (
           <p className="text-orange-dark text-sm mt-1">{errors.background.message}</p>
+        )}
+      </div>
+      <div className="w-full mb-4">
+        <label htmlFor="timePreference" className="block text-black font-bold mb-1">
+          Preferred Workshop Time*
+        </label>
+        <select
+          id="timePreference"
+          {...register('timePreference')}
+          className="w-full rounded-lg border-2 border-orange-dark p-extrasmall font-inter"
+          required
+        >
+          <option value="">Select your preferred time</option>
+          <option value="3pm CET">3pm CET (6am PT)</option>
+          <option value="7pm CET">7pm CET (10am PT)</option>
+          <option value="other">Other (specify below)</option>
+        </select>
+        {customTimeSelected && (
+          <input
+            type="text"
+            {...register('customTime', { required: true })}
+            className="w-full mt-2 rounded-lg border-2 border-orange-dark p-extrasmall font-inter"
+            placeholder="Specify your preferred time (include timezone)"
+          />
+        )}
+        {errors.timePreference && (
+          <p className="text-orange-dark text-sm mt-1">{errors.timePreference?.message}</p>
+        )}
+        {customTimeSelected && errors.customTime && (
+          <p className="text-orange-dark text-sm mt-1">{errors.customTime?.message}</p>
         )}
       </div>
       <button

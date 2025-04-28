@@ -44,6 +44,14 @@ const Subscribers: CollectionConfig = {
       },
     },
     {
+      name: 'preferredTime',
+      type: 'text',
+      admin: {
+        description: 'Preferred time for the workshop',
+        condition: data => data.source === 'workshop',
+      },
+    },
+    {
       name: 'status',
       type: 'select',
       defaultValue: 'active',

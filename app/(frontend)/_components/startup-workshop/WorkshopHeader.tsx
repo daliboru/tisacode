@@ -8,7 +8,7 @@ const WorkshopHeader: React.FC = () => {
       <Spacer size="medium" />
 
       <div className="hero-message">
-        {`Join us on May 15th at 5pm CET (8am PT) for a 1h + Q&A that will transform how you think about entrepreneurship. 
+        {`Join us on May 15th for a 1h + Q&A that will transform how you think about entrepreneurship. 
         Learn the fundamental principles that separate successful founders from the rest.`}
       </div>
     </>

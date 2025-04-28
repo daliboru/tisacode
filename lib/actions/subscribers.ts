@@ -8,13 +8,14 @@ export async function createSubscriberFromWorkshop(data: WorkshopFormInputs) {
   try {
     const { payload } = await getServerValues()
 
-    const { name, email, background, workshopId } = data
+    const { name, email, background, workshopId, timePreference } = data
 
     const parsedData = workshopFormSchema.safeParse({
       name,
       email,
       background,
       workshopId,
+      timePreference,
     })
 
     if (!parsedData.success) {
@@ -54,6 +55,7 @@ export async function createSubscriberFromWorkshop(data: WorkshopFormInputs) {
         background: parsedData.data.background,
         source: 'workshop',
         workshopId: parsedData.data.workshopId,
+        preferredTime: parsedData.data.timePreference,
       },
     })
 

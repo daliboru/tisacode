@@ -165,6 +165,10 @@ export interface Subscriber {
    * Identifier for the specific workshop the subscriber signed up for
    */
   workshopId?: string | null;
+  /**
+   * Preferred time for the workshop
+   */
+  preferredTime?: string | null;
   status?: ('active' | 'unsubscribed' | 'bounced') | null;
   updatedAt: string;
   createdAt: string;
@@ -273,6 +277,7 @@ export interface SubscribersSelect<T extends boolean = true> {
   background?: T;
   source?: T;
   workshopId?: T;
+  preferredTime?: T;
   status?: T;
   updatedAt?: T;
   createdAt?: T;

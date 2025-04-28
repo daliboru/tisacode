@@ -14,7 +14,7 @@ import WorkshopSessions from '../_components/startup-workshop/WorkshopSessions'
 export const metadata: Metadata = {
   title: 'Tisacode | Startup First Principles Workshop',
   description:
-    'A 1-hour online workshop + Q&A on May 16th exploring entrepreneurship first principles: good questions, leverage, edges, lean methodology, AI integration, side hustles, and programming.',
+    'A 1-hour online workshop + Q&A on May 15th exploring entrepreneurship first principles: good questions, leverage, edges, lean methodology, AI integration, side hustles, and programming.',
 }
 
 export default function StartupWorkshopPage() {

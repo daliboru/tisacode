@@ -51,7 +51,7 @@ export const workshopMay2025EmailHTML = (name: string) => {
 </head>
 <body>
   <div class="container">
-    <div>
+    <div style="text-align: center;">
       <img src="https://tisacode.com/images/logo.webp" alt="Tisacode Logo" style="height: 48px; margin-bottom: 12px;" />
     </div>
     
@@ -65,7 +65,6 @@ export const workshopMay2025EmailHTML = (name: string) => {
       <p><strong>Workshop Details:</strong></p>
       <ul>
         <li>Date: May 15th, 2025</li>
-        <li>Time: 5pm CET (8am PT)</li>
         <li>Format: 1-hour workshop + Q&A</li>
         <li>Topics: First principles thinking, finding your edge, lean methodology, and more</li>
       </ul>
@@ -99,7 +98,6 @@ export const workshopMay2025PlainText = (name: string) => {
 
         WORKSHOP DETAILS:
         - Date: May 15th, 2025
-        - Time: 5pm CET (8am PT)
         - Format: 1-hour workshop + Q&A
         - Topics: First principles thinking, finding your edge, lean methodology, and more
 
