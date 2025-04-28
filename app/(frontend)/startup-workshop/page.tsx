@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tisacode | Entrepreneurship First Principles Workshop',
     description: 'Join our interactive workshop on entrepreneurship first principles.',
-    url: 'https://tisacode.com/Entrepreneurship-workshop',
+    url: 'https://www.tisacode.com/startup-workshop',
     type: 'website',
     images: [
       {
-        url: 'https://tisacode.com/images/workshop-may-2025.webp',
+        url: 'https://tisacode.com/images/workshop-may-2025-banner.webp',
         width: 1200,
         height: 630,
         alt: 'Entrepreneurship First Principles Workshop',
