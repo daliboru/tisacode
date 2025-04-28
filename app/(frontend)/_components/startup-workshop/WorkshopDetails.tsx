@@ -19,7 +19,7 @@ const WorkshopDetails: React.FC = () => {
       <div className="title">Workshop Details</div>
       <Spacer size="small" />
       <div className="text">
-        <strong>Date:</strong>May 15th, 2024
+        <strong>Date:</strong> May 15th, 2024
         <br />
         <strong>Format:</strong> Online with live interaction
         <br />
