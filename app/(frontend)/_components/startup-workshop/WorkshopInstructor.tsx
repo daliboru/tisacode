@@ -27,7 +27,7 @@ const WorkshopInstructor: React.FC = () => {
           <p className="font-bold mb-2">Dalibor Belić</p>
           <p className="mb-3">
             Dalibor is a problem solver, a priori. He&apos;s been building products and scaling
-            startups in Serbia and Scandinavia for the past 7 years. He recently founded
+            startups in Serbia and Scandinavia for the past 7 years. He recently co-founded
             <span className="font-bold">
               {' '}
               <Link href="https://tiny-portals.com/">Tiny Portals.</Link>
