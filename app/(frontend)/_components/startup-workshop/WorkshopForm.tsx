@@ -3,7 +3,7 @@
 import { createSubscriberFromWorkshop } from '@/lib/actions/subscribers'
 import { WorkshopFormInputs, workshopFormSchema } from '@/lib/validations/workshop'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 function WorkshopForm() {
@@ -44,9 +44,7 @@ function WorkshopForm() {
     const finalData = {
       ...data,
       timePreference:
-        data.timePreference === 'other' && data.customTime
-          ? data.customTime
-          : data.timePreference,
+        data.timePreference === 'other' && data.customTime ? data.customTime : data.timePreference,
     }
     try {
       const response = await createSubscriberFromWorkshop(finalData)
@@ -64,7 +62,9 @@ function WorkshopForm() {
   if (submitted) {
     return (
       <div className="text-center font-sf-pro text-xl">
-        🎉 Your future self is doing a happy dance! <br />
+        🎉 As Rollo May observed, it takes courage to create. Congrats on taking this bold step
+        forward!
+        <br />
         Check your inbox for workshop details (we promise not to send you cryptocurrency
         opportunities).
       </div>
