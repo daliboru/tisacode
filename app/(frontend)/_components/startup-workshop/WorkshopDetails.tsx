@@ -7,12 +7,12 @@ const WorkshopDetails: React.FC = () => {
       <div className="title">Who Should Attend?</div>
       <Spacer size="small" />
       <div className="text">
-        • Aspiring entrepreneurs looking to validate their ideas
+        • Software Engineers looking to increase their business impact
         <br />
-        • Side hustlers ready to take their projects to the next level
+        • Tech Leads and Engineering Managers driving strategic decisions
         <br />
-        • Professionals interested in first-principles thinking
-        <br />• Anyone who wants to build something meaningful in the AI era
+        • Product Engineers focused on value-driven development
+        <br />• Developers who want to bridge the gap between code and business outcomes
       </div>
       <Spacer size="large" />
 

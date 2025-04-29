@@ -4,31 +4,26 @@ import Spacer from '../../../../components/Spacer'
 const WorkshopSessions: React.FC = () => {
   return (
     <>
-      <div className="title">First Principles of Entrepreneurship</div>
+      <div className="title">First Principles of Creating Value</div>
       <Spacer size="small" />
       <div className="text">
         <div className="mb-4">
-          <span className="font-bold">{`Asking the Right Questions`}</span>
-          <p>{`Learn how to frame problems in ways that lead to breakthrough solutions. 
-          The quality of your questions determines the quality of your business.`}</p>
+          <span className="font-bold">{`Asking the right questions`}</span>
+          <p>{`Frame engineering problems through business impact lens. Learn to ask questions that uncover core value drivers and guide technical decisions.`}</p>
+        </div>
+        <div className="mb-4">
+          <span className="font-bold">{`Breaking Down Complex Problems`}</span>
+          <p>{`Decompose business challenges into fundamental components. Learn to identify core value drivers and translate them into technical solutions that matter.`}</p>
         </div>
 
         <div className="mb-4">
-          <span className="font-bold">{`Finding Your Edge & Leverage`}</span>
-          <p>{`Discover your unfair advantages and how to apply leverage to multiply your impact. 
-          We'll explore how to identify and exploit asymmetric opportunities in the market.`}</p>
-        </div>
-
-        <div className="mb-4">
-          <span className="font-bold">{`Lean Methodology & Rapid Iteration`}</span>
-          <p>{`Master the art of building, measuring, and learning with minimal resources. 
-          Learn how to validate ideas quickly and pivot when necessary.`}</p>
+          <span className="font-bold">{`Engineering Leverage Points`}</span>
+          <p>{`Spot high-impact opportunities where minimal engineering effort yields maximum business returns. Focus on solutions that create compound value over time.`}</p>
         </div>
 
         <div>
-          <span className="font-bold">{`AI Integration & Programming`}</span>
-          <p>{`Harness AI as your co-founder and learn how programming skills can accelerate your 
-          side hustle. We'll cover practical tools and workflows for non-technical founders.`}</p>
+          <span className="font-bold">{`Rapid Value Validation`}</span>
+          <p>{`Build quick prototypes that test business assumptions. Learn to measure engineering impact through revenue, cost savings, and market advantage metrics.`}</p>
         </div>
       </div>
     </>

@@ -4,11 +4,13 @@ import Spacer from '../../../../components/Spacer'
 const WorkshopHeader: React.FC = () => {
   return (
     <>
-      <div className="section">Entrepreneurship First Principles Workshop</div>
+      <div className="section">
+        Beyond the Brief: Engineering Solutions That Drive Real Business Value
+      </div>
       <Spacer size="medium" />
 
       <div className="hero-message">
-        {`Join us on May 15th for a 1h + Q&A and let this workshop nudge you in the right direction when it comes to building a business.`}
+        {`A 1-hour online workshop + Q&A on May 15th exploring how to move past superficial and address root causes with scalable, sustainable solutions. Don’t just solve what users ask for—solve what they need. Engineer lean systems that turn those needs into quantifiable business gains.`}
       </div>
     </>
   )

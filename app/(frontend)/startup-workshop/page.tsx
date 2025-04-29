@@ -1,6 +1,8 @@
+import config from '@payload-config'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getPayload } from 'payload'
 import Logo from '../../../components/Logo'
 import Spacer from '../../../components/Spacer'
 import Footer from '../_components/landing/Footer'
@@ -11,49 +13,75 @@ import WorkshopInstructor from '../_components/startup-workshop/WorkshopInstruct
 import WorkshopQuote from '../_components/startup-workshop/WorkshopQuote'
 import WorkshopSessions from '../_components/startup-workshop/WorkshopSessions'
 
-export const metadata: Metadata = {
-  title: 'Tisacode | Entrepreneurship First Principles Workshop',
-  description:
-    'A 1-hour online workshop + Q&A on May 15th exploring entrepreneurship first principles: good questions, leverage, edges, lean methodology, AI integration, side hustles, and programming.',
-  keywords: [
-    'startup',
-    'entrepreneurship',
-    'workshop',
-    'first principles',
-    'lean methodology',
-    'AI',
-    'side hustle',
-    'programming',
-  ],
-  openGraph: {
-    title: 'Tisacode | Entrepreneurship First Principles Workshop',
-    description: 'Join our interactive workshop on entrepreneurship first principles.',
-    url: 'https://www.tisacode.com/startup-workshop',
-    type: 'website',
-    images: [
-      {
-        url: 'https://tisacode.com/images/workshop-may-2025-banner.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Entrepreneurship First Principles Workshop',
+export async function generateMetadata(): Promise<Metadata> {
+  const payload = await getPayload({ config })
+
+  const workshopBanner = await payload.find({
+    collection: 'media',
+    where: {
+      alt: {
+        equals: 'workshop-may-2025',
       },
+    },
+  })
+
+  return {
+    title: 'Tisacode | Beyond the Brief: Engineering Solutions That Drive Real Business Value',
+    description:
+      'A 1-hour online workshop + Q&A on May 15th exploring how to move past superficial and address root causes with scalable, sustainable solutions.',
+    keywords: [
+      'engineering solutions',
+      'business value',
+      'software development',
+      'technical strategy',
+      'software architecture',
+      'business impact',
+      'engineering excellence',
+      'technical leadership',
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Tisacode | Entrepreneurship First Principles Workshop',
-    description: 'Join our interactive workshop on entrepreneurship first principles.',
-    images: ['https://tisacode.com/images/workshop-may-2025.webp'],
-  },
-  authors: [{ name: 'Dalibor Belic', url: 'https://tisacode.com' }],
-  robots: 'index, follow',
-  themeColor: '#FB8B02',
-  icons: {
-    icon: '/favicon.ico',
-  },
+    openGraph: {
+      title: 'Tisacode | Beyond the Brief: Engineering Solutions That Drive Real Business Value',
+      description:
+        'A 1-hour online workshop + Q&A on May 15th exploring how to move past superficial and address root causes with scalable, sustainable solutions.',
+      url: 'https://www.tisacode.com/startup-workshop',
+      type: 'website',
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_SERVER_URL}${workshopBanner.docs[0].url}`,
+          width: 1200,
+          height: 630,
+          alt: 'Beyond the Brief: Engineering Solutions That Drive Real Business Value',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Tisacode | Beyond the Brief: Engineering Solutions That Drive Real Business Value',
+      description:
+        'A 1-hour online workshop + Q&A on May 15th exploring how to move past superficial and address root causes with scalable, sustainable solutions.',
+      images: [`${process.env.NEXT_PUBLIC_SERVER_URL}${workshopBanner.docs[0].url}`],
+    },
+    authors: [{ name: 'Dalibor Belic', url: 'https://tisacode.com' }],
+    robots: 'index, follow',
+    themeColor: '#FB8B02',
+    icons: {
+      icon: '/favicon.ico',
+    },
+  }
 }
 
-export default function StartupWorkshopPage() {
+export default async function StartupWorkshopPage() {
+  const payload = await getPayload({ config })
+
+  const workshopBanner = await payload.find({
+    collection: 'media',
+    where: {
+      alt: {
+        equals: 'workshop-may-2025',
+      },
+    },
+  })
+
   return (
     <div className="min-h-screen flex flex-col-reverse md:flex-row w-full">
       {/* Left scrollable panel */}
@@ -89,15 +117,15 @@ export default function StartupWorkshopPage() {
       {/* Right static panel */}
       <div className="relative w-full md:w-1/2 px-small py-medium md:p-medium">
         <Image
-          src="/images/workshop-may-2025.webp"
-          alt="Entrepreneurship First Principles Workshop"
+          src={workshopBanner.docs[0].url!}
+          alt="Beyond the Brief: Engineering Solutions That Drive Real Business Value"
           fill
           className="object-cover"
           sizes="50vw"
           priority
         />
         <div className="action sticky top-0 max-w-full break-words hyphens-auto">
-          Master the first principles of entrepreneurship.
+          First Principles. Lasting Impact.
         </div>
       </div>
     </div>
