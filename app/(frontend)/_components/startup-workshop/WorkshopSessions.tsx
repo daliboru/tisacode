@@ -25,7 +25,7 @@ const WorkshopSessions: React.FC = () => {
           Learn how to validate ideas quickly and pivot when necessary.`}</p>
         </div>
 
-        <div className="mb-4">
+        <div>
           <span className="font-bold">{`AI Integration & Programming`}</span>
           <p>{`Harness AI as your co-founder and learn how programming skills can accelerate your 
           side hustle. We'll cover practical tools and workflows for non-technical founders.`}</p>
