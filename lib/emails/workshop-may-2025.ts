@@ -5,7 +5,7 @@ export const workshopMay2025EmailHTML = (name: string) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrepreneurship First Principles Workshop - Registration Confirmed</title>
+  <title>Beyond the Brief Workshop - Registration Confirmed</title>
   <style>
     body {
       font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -60,13 +60,13 @@ export const workshopMay2025EmailHTML = (name: string) => {
       
       <p>${name ? `Hi ${name},` : 'Hi there,'}</p>
       
-      <p>Thank you for registering for our <strong>Entrepreneurship First Principles Workshop</strong>. We're excited to have you join us on May 15th for this interactive session where we'll explore the fundamental principles of entrepreneurship.</p>
+      <p>Thank you for registering for our <strong>Beyond the Brief Workshop</strong>. We're excited to have you join us on May 15th for this interactive session where we'll explore the tools and mental models for engineering successful solutions that drive real business value.</p>
       
       <p><strong>Workshop Details:</strong></p>
       <ul>
         <li>Date: May 15th, 2025</li>
         <li>Format: 1-hour workshop + Q&A</li>
-        <li>Topics: First principles thinking, finding your edge, lean methodology, and more</li>
+        <li>Topics: First principles thinking, technical strategy, lean methodology, and more</li>
       </ul>
       
       <p style="margin-top: 30px;">We'll send you a reminder with the meeting link closer to the date. If you have any questions in the meantime, feel free to reply to this email.</p>
@@ -89,17 +89,17 @@ export const workshopMay2025EmailHTML = (name: string) => {
 
 export const workshopMay2025PlainText = (name: string) => {
   return `
-        ENTREPRENEURSHIP FIRST PRINCIPLES WORKSHOP - REGISTRATION CONFIRMED
+        BEYOND THE BRIEF - REGISTRATION CONFIRMED
         -----------------------------------------------------------
 
         Hi ${name},
 
-        Thank you for registering for our Entrepreneurship First Principles Workshop. We're excited to have you join us on May 15th for this interactive session where we'll explore the fundamental principles of entrepreneurship.
+       Thank you for registering for our Beyond the Brief Workshop. We're excited to have you join us on May 15th for this interactive session where we'll explore the tools and mental models for engineering successful solutions that drive real business value.
 
         WORKSHOP DETAILS:
         - Date: May 15th, 2025
         - Format: 1-hour workshop + Q&A
-        - Topics: First principles thinking, finding your edge, lean methodology, and more
+        - Topics: First principles thinking, technical strategy, lean methodology, and more
 
         We'll send you a reminder with the meeting link closer to the date. If you have any questions in the meantime, feel free to reply to this email.
 
