@@ -7,12 +7,15 @@ const WorkshopDetails: React.FC = () => {
       <div className="title">Who Should Attend?</div>
       <Spacer size="small" />
       <div className="text">
-        • Software Engineers looking to increase their business impact
-        <br />
-        • Tech Leads and Engineering Managers driving strategic decisions
-        <br />
-        • Product Engineers focused on value-driven development
-        <br />• Developers who want to bridge the gap between code and business outcomes
+        • <span className="font-bold">Software engineers</span> who want to create solutions with
+        measurable business impact rather than just meeting technical specifications
+        <br />• <span className="font-bold">Product managers</span> looking to better translate user
+        needs into viable technical solutions that drive business value
+        <br />• <span className="font-bold">Tech leads</span> and{' '}
+        <span className="font-bold">engineering managers</span> responsible for guiding teams toward
+        business-aligned outcomes and improving project success rates
+        <br />• <span className="font-bold">Business stakeholders</span> who need to understand how
+        technology investments directly connect to ROI and business growth
       </div>
       <Spacer size="large" />
 
