@@ -7,7 +7,6 @@ import Logo from '../../../components/Logo'
 import Spacer from '../../../components/Spacer'
 import Footer from '../_components/landing/Footer'
 import WorkshopDetails from '../_components/startup-workshop/WorkshopDetails'
-import WorkshopForm from '../_components/startup-workshop/WorkshopForm'
 import WorkshopHeader from '../_components/startup-workshop/WorkshopHeader'
 import WorkshopInstructor from '../_components/startup-workshop/WorkshopInstructor'
 import WorkshopQuote from '../_components/startup-workshop/WorkshopQuote'
@@ -103,10 +102,10 @@ export default async function StartupWorkshopPage() {
         <WorkshopDetails />
         <Spacer size="large" />
 
-        <div className="title">Join the Workshop</div>
+        {/* <div className="title">Join the Workshop</div>
         <Spacer size="small" />
         <WorkshopForm />
-        <Spacer size="large" />
+        <Spacer size="large" /> */}
 
         <WorkshopQuote />
         <Spacer size="large" />
