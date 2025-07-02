@@ -21,8 +21,9 @@ const HomePage: React.FC = () => {
         </div>
         <Spacer size="large" className="md:block " />
         <div className="hero-message">
-          We craft clean, scalable code that grows with your business, delivering straightforward,
-          maintainable solutions that drive real results for you.
+          We help tech-driven businesses build the right product, and build the product right. From
+          validating your MVP to optimizing your tech ROI, we combine strategic product thinking
+          with lean, agile execution.
         </div>
         <Spacer size="large" />
         {/* SECTIONS */}

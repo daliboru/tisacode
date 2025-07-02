@@ -1,51 +1,34 @@
 import React from 'react'
 import Spacer from '../../../../components/Spacer'
 
-const services = [
+const earlyStageServices = [
   {
-    title: 'Architecture Design & Evolution',
-    subtitle: 'Future-proof architecture design that evolves with your business',
-    items: [
-      'Architecture decision records',
-      'System design documentation',
-      'Technical roadmap',
-      'Migration strategy',
-    ],
+    title: 'Product & Tech Validation',
+    description:
+      "Got an idea? We help you fail fast or validate quickly. We'll define your MVP, map the core user journey, and create a lean technical strategy to test your assumptions before you invest heavily.",
   },
   {
-    title: 'Legacy System Modernisation',
-    subtitle: 'Transform legacy systems into modern, maintainable codebases',
-    items: [
-      'Modernisation roadmap',
-      'Risk assessment',
-      'Refactoring guidelines',
-      'Progress metrics',
-    ],
+    title: 'MVP & Core Product Development',
+    description:
+      'From a validated idea to a market-ready product. We build the core of your application with a focus on speed, quality, and scalability, ensuring you have a solid foundation to grow on.',
+  },
+]
+
+const establishedServices = [
+  {
+    title: 'Tech & Product Audit',
+    description:
+      'Is your tech holding you back? We conduct a deep-dive into your existing systems, processes, and team structure to identify bottlenecks and opportunities for growth.',
   },
   {
-    title: 'Technical Strategy Consulting',
-    subtitle: 'Align technical decisions with business objectives',
-    items: [
-      'Technology radar',
-      'Strategic recommendations',
-      'Implementation plan',
-      'Cost-benefit analysis',
-    ],
+    title: 'Legacy Modernisation & Optimisation',
+    description:
+      'Unlock the hidden value in your existing tech. We transform legacy systems into modern, efficient assets, improving performance, reducing maintenance costs, and enabling new features.',
   },
   {
-    title: 'Team Transformation',
-    subtitle: 'Build high-performing technical teams',
-    items: ['Training materials', 'Practice guidelines', 'Progress metrics', 'Knowledge base'],
-  },
-  {
-    title: 'DevOps & CI/CD',
-    subtitle: 'Establish robust delivery pipelines and operations',
-    items: ['Pipeline design', 'Infrastructure templates', 'Monitoring dashboards', 'Runbooks'],
-  },
-  {
-    title: 'Software Quality & Testing',
-    subtitle: 'Build quality into your development process',
-    items: ['Test framework', 'Quality reports', 'Testing guidelines', 'Coverage metrics'],
+    title: 'Strategic Team Enablement',
+    description:
+      'Empower your in-house team. We help you implement the practices and processes of high-performing tech teams, from CI/CD pipelines to agile workflows, fostering a culture of excellence.',
   },
 ]
 
@@ -53,34 +36,34 @@ const Services: React.FC = () => {
   return (
     <>
       <div id="services" className="section">
-        Technical Services
+        How We Help
       </div>
       <Spacer size="medium" />
       <div className="subtitle">
-        End-to-end software engineering services focused on maintainability, scalability, and
-        business value.
+        Strategic product development for tech-driven businesses. We help you validate, build, and
+        optimize.
       </div>
+      <Spacer size="large" />
+
+      <div className="title">For Early-Stage Businesses: Validate & Build</div>
       <Spacer size="medium" />
-      {services.map((service, index) => (
-        <div key={index}>
-          <div className="title">{service.title}</div>
+      {earlyStageServices.map((service, index) => (
+        <div key={index} className="mb-medium">
+          <div className="font-bold subtitle">{service.title}</div>
           <Spacer size="small" />
-          <div className="subtitle">{service.subtitle}</div>
+          <div className="text">{service.description}</div>
+        </div>
+      ))}
+
+      <Spacer size="large" />
+
+      <div className="title">For Established Businesses: Optimize & Grow</div>
+      <Spacer size="medium" />
+      {establishedServices.map((service, index) => (
+        <div key={index} className="mb-medium">
+          <div className="font-bold subtitle">{service.title}</div>
           <Spacer size="small" />
-          <div className="flex flex-row gap-medium">
-            <div className="w-1/2 pl-medium">
-              <div className="h-1/2 border-b-4 border-black border-l-4"></div>
-              <div className="border-t-[10px] border-t-transparent border-l-[20px] border-l-black border-b-[10px] border-b-transparent relative float-end -top-[12px] left-[8px]" />
-            </div>
-            <div className="w-1/2">
-              {service.items.map((item, index) => (
-                <div key={index} className="item text">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-          {index < services.length - 1 && <Spacer size="medium" />}
+          <div className="text">{service.description}</div>
         </div>
       ))}
     </>

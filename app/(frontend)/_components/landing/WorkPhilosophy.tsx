@@ -1,56 +1,56 @@
 import React from 'react'
 import Spacer from '../../../../components/Spacer'
 
-const commandments = [
+const principles = [
   {
-    title: 'Evolutionary Architecture',
+    title: 'Built to Adapt',
     description:
-      'We design systems that embrace change, using modularity and clean architecture to ensure your software can evolve with your business needs.',
+      'We design systems that embrace change, ensuring your technology can evolve with your market and business needs.',
   },
   {
-    title: 'Technical Excellence',
+    title: 'Quality as a Foundation',
     description:
-      'Quality is non-negotiable. We practice test-driven development, continuous refactoring, and pair programming to maintain high standards.',
+      'Quality is non-negotiable. Our commitment to technical excellence mitigates risk and ensures your product is reliable from day one.',
   },
   {
-    title: 'Continuous Delivery',
+    title: 'Momentum and Feedback',
     description:
-      'Small, frequent releases reduce risk and accelerate feedback. We build robust deployment pipelines for reliable software delivery.',
+      'Small, frequent releases reduce risk and accelerate feedback. This lean approach means we’re always building what’s most valuable and can adapt quickly.',
   },
   {
-    title: 'Developer Empowerment',
+    title: 'A Partnership Approach',
     description:
-      'Developers are strategic partners, not code manufacturers. We foster autonomy, mastery, and purpose in technical decision-making.',
+      'We act as strategic partners, not just coders. This means fostering autonomy and purpose to solve your business challenges, not just complete tasks.',
   },
   {
-    title: 'Sustainable Practices',
+    title: 'Long-Term Value',
     description:
-      'We prioritise long-term maintainability over short-term gains, ensuring your codebase remains healthy and adaptable.',
+      'We prioritize long-term maintainability over short-term gains, building a tech asset that remains healthy and adaptable for years to come.',
   },
   {
-    title: 'Agile Technical Practices',
+    title: 'Efficient & Effective',
     description:
-      'We combine XP practices with modern development approaches to deliver value continuously and reliably.',
+      'We combine proven agile practices with modern development to deliver value continuously and reliably, ensuring efficiency and focus.',
   },
 ]
 
 const WorkPhilosophy: React.FC = () => {
   return (
     <>
-      <div className="section">Work Philosophy</div>
+      <div className="section">Our Guiding Principles</div>
       <Spacer size="medium" />
       <div className="subtitle">
         Our approach blends modern engineering with timeless craftsmanship, treating software as a
         strategic asset, not a deliverable.
       </div>
       <Spacer size="medium" />
-      {commandments.map((commandment, index) => (
+      {principles.map((principle, index) => (
         <div key={index}>
           <div className="flex flex-col md:flex-row border-b-4 border-black pb-medium">
-            <h1 className="w-full md:w-1/2 title mb-2 md:mb-0">{commandment.title}</h1>
-            <p className="w-full md:w-1/2 md:ml-3 text">{commandment.description}</p>
+            <h1 className="w-full md:w-1/2 title mb-2 md:mb-0">{principle.title}</h1>
+            <p className="w-full md:w-1/2 md:ml-3 text">{principle.description}</p>
           </div>
-          {index < commandments.length - 1 && <Spacer size="medium" />}
+          {index < principles.length - 1 && <Spacer size="medium" />}
         </div>
       ))}
     </>
