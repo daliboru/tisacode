@@ -2,12 +2,27 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Menu: React.FC = () => {
   const [showWorkshopsMenu, setShowWorkshopsMenu] = useState(false)
+  const workshopsMenuRef = useRef<HTMLLIElement>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
+
+  // Close workshops dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (workshopsMenuRef.current && !workshopsMenuRef.current.contains(event.target as Node)) {
+        setShowWorkshopsMenu(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   // Close mobile menu when window is resized to desktop size
   useEffect(() => {
@@ -64,13 +79,19 @@ const Menu: React.FC = () => {
         aria-label="Toggle menu"
       >
         <span
-          className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
+          className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${
+            mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+          }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-black transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}
+          className={`block w-6 h-0.5 bg-black transition-opacity duration-300 ${
+            mobileMenuOpen ? 'opacity-0' : 'opacity-100'
+          }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+          className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${
+            mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+          }`}
         ></span>
       </button>
 
@@ -80,14 +101,17 @@ const Menu: React.FC = () => {
         md:flex md:space-x-4 md:static md:bg-transparent md:shadow-none md:border-none md:p-0 md:w-auto md:opacity-100 md:translate-y-0 md:pointer-events-auto
         absolute right-0 top-10 bg-white shadow-lg rounded-lg border border-gray-200 p-4 w-48 z-20
         transition-all duration-300 ease-in-out
-        ${mobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none md:pointer-events-auto'}
+        ${
+          mobileMenuOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-2 pointer-events-none md:pointer-events-auto'
+        }
       `}
       >
-        <li className="relative mb-3 md:mb-0">
+        <li className="relative mb-3 md:mb-0" ref={workshopsMenuRef}>
           <button
             className="hover:text-orange-dark transition w-full text-left"
             onClick={() => setShowWorkshopsMenu(!showWorkshopsMenu)}
-            onBlur={() => setTimeout(() => setShowWorkshopsMenu(false), 100)}
           >
             Workshops
           </button>
