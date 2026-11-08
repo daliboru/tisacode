@@ -3,45 +3,45 @@ import Spacer from '../../../../components/Spacer'
 
 const principles = [
   {
-    title: 'Built to Adapt',
+    title: 'Change is the only spec.',
     description:
-      'We design systems that embrace change, ensuring your technology can evolve with your market and business needs.',
+      'Your market will move. Your roadmap will move. We build systems that take a new requirement without tearing the walls open.',
   },
   {
-    title: 'Quality as a Foundation',
+    title: 'No bare wires.',
     description:
-      'Quality is non-negotiable. Our commitment to technical excellence mitigates risk and ensures your product is reliable from day one.',
+      "We don't ship what we wouldn't run ourselves. Quality is how the work gets done from the first commit, so your product is reliable from the first release.",
   },
   {
-    title: 'Momentum and Feedback',
+    title: 'Small releases. Often.',
     description:
-      'Small, frequent releases reduce risk and accelerate feedback. This lean approach means we’re always building what’s most valuable and can adapt quickly.',
+      "Small, frequent releases mean small, cheap mistakes. You see working software early, tell us what's off, and we fix it while it's still a small fix.",
   },
   {
-    title: 'A Partnership Approach',
+    title: 'We ask why.',
     description:
-      'We act as strategic partners, not just coders. This means fostering autonomy and purpose to solve your business challenges, not just complete tasks.',
+      'A ticket tells us what to build. We want to know why, because half the time the real problem sits one room over.',
   },
   {
-    title: 'Long-Term Value',
+    title: 'Someone has to live here.',
     description:
-      'We prioritize long-term maintainability over short-term gains, building a tech asset that remains healthy and adaptable for years to come.',
+      "We pick maintainability over the quick hack. Some day, someone will open this code at 2 a.m. We'd like them to find labels on the fuse box.",
   },
   {
-    title: 'Efficient & Effective',
+    title: 'Agile, minus the theatre.',
     description:
-      'We combine proven agile practices with modern development to deliver value continuously and reliably, ensuring efficiency and focus.',
+      'We keep the agile practices that work (short cycles, honest demos, a backlog someone actually reads) and drop the ceremonies that only produce more meetings.',
   },
 ]
 
 const WorkPhilosophy: React.FC = () => {
   return (
     <>
-      <div className="section">Our Guiding Principles</div>
+      <div className="section">House rules.</div>
       <Spacer size="medium" />
       <div className="subtitle">
-        Our approach blends modern engineering with timeless craftsmanship, treating software as a
-        strategic asset, not a deliverable.
+        A few things we hold to, whatever framework is in fashion this year. Oh, and the name: Tisa
+        is the river our founder grew up on.
       </div>
       <Spacer size="medium" />
       {principles.map((principle, index) => (

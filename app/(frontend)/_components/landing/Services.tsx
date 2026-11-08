@@ -3,32 +3,32 @@ import Spacer from '../../../../components/Spacer'
 
 const earlyStageServices = [
   {
-    title: 'Product & Tech Validation',
+    title: 'Product & tech validation.',
     description:
-      "Got an idea? We help you fail fast or validate quickly. We'll define your MVP, map the core user journey, and create a lean technical strategy to test your assumptions before you invest heavily.",
+      'Got an idea and a deadline? We define the MVP, map the one user journey that matters, and plan the leanest tech that can test your assumptions. Before you put serious money in.',
   },
   {
-    title: 'MVP & Core Product Development',
+    title: 'MVP & core product.',
     description:
-      'From a validated idea to a market-ready product. We build the core of your application with a focus on speed, quality, and scalability, ensuring you have a solid foundation to grow on.',
+      'From validated idea to something people can use and pay for. We build the core fast and properly, on a foundation that can carry whatever comes next.',
   },
 ]
 
 const establishedServices = [
   {
-    title: 'Tech & Product Audit',
+    title: 'Tech & product audit.',
     description:
-      'Is your tech holding you back? We conduct a deep-dive into your existing systems, processes, and team structure to identify bottlenecks and opportunities for growth.',
+      'Something feels slow and nobody can say why. We go through your systems, processes and team structure, and come back with a map of the bottlenecks and the places with room to grow.',
   },
   {
-    title: 'Legacy Modernisation & Optimisation',
+    title: 'Legacy modernisation.',
     description:
-      'Unlock the hidden value in your existing tech. We transform legacy systems into modern, efficient assets, improving performance, reducing maintenance costs, and enabling new features.',
+      'The hallway-switch, bathroom-light kind of system. We modernise it piece by piece, so it runs faster, costs less to maintain, and can finally take new features.',
   },
   {
-    title: 'Strategic Team Enablement',
+    title: 'Team enablement.',
     description:
-      'Empower your in-house team. We help you implement the practices and processes of high-performing tech teams, from CI/CD pipelines to agile workflows, fostering a culture of excellence.',
+      'Your in-house team, with the habits of a high-performing one. From CI/CD pipelines to agile workflows, we set the practices up with your people, then step back.',
   },
 ]
 
@@ -36,16 +36,16 @@ const Services: React.FC = () => {
   return (
     <>
       <div id="services" className="section">
-        How We Help
+        What we do.
       </div>
       <Spacer size="medium" />
       <div className="subtitle">
-        Strategic product development for tech-driven businesses. We help you validate, build, and
-        optimize.
+        Product engineering for tech businesses. We validate ideas, build products and rewire the
+        ones that already run.
       </div>
       <Spacer size="large" />
 
-      <div className="title">For Early-Stage Businesses: Validate & Build</div>
+      <div className="title">Early stage. Validate, then build.</div>
       <Spacer size="medium" />
       {earlyStageServices.map((service, index) => (
         <div key={index} className="mb-medium">
@@ -57,7 +57,7 @@ const Services: React.FC = () => {
 
       <Spacer size="large" />
 
-      <div className="title">For Established Businesses: Optimize & Grow</div>
+      <div className="title">Established. Audit, rewire, grow.</div>
       <Spacer size="medium" />
       {establishedServices.map((service, index) => (
         <div key={index} className="mb-medium">

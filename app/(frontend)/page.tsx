@@ -21,9 +21,9 @@ const HomePage: React.FC = () => {
         </div>
         <Spacer size="large" className="md:block " />
         <div className="hero-message">
-          We help tech-driven businesses build the right product, and build the product right. From
-          validating your MVP to optimizing your tech ROI, we combine strategic product thinking
-          with lean, agile execution.
+          You flip the hallway switch and the bathroom light comes on. Nobody remembers who wired
+          it. Nobody wants to touch it. We&apos;re the software team you call for that: we build new
+          products for tech businesses and rewire the ones already running.
         </div>
         <Spacer size="large" />
         {/* SECTIONS */}
@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
           sizes="50vw"
           priority
         />
-        <div className="relative action">Software is a service, not a commodity.</div>
+        <div className="relative action">Wired to be rewired.</div>
       </div>
     </div>
   )

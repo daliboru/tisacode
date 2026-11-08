@@ -9,7 +9,7 @@ function ContactForm() {
   if (state.succeeded) {
     return (
       <div className="text-center">
-        <p className="title mb-4">We have a liftoff! 🚀</p>
+        <p className="title mb-4">Got it. We&apos;ll take a look at the wiring.</p>
       </div>
     )
   }
@@ -17,13 +17,13 @@ function ContactForm() {
   return (
     <>
       <div id="contact" className="section">
-        Contact Us
+        Write to us.
       </div>
       <Spacer size="medium" />
       <div className="flex w-full flex-col">
         <form onSubmit={handleSubmit}>
           <label htmlFor="email" className="title">
-            Email Address
+            Your email
           </label>
           <Spacer size="small" />
           <div>
@@ -38,7 +38,7 @@ function ContactForm() {
           <ValidationError prefix="Email" field="email" errors={state.errors} />
           <Spacer size="medium" />
           <label htmlFor="message" className="title">
-            Message
+            What&apos;s going on
           </label>
           <Spacer size="small" />
           <textarea
@@ -56,7 +56,7 @@ function ContactForm() {
               className="w-full title pointer"
               style={{ color: 'white' }}
             >
-              Submit
+              Send →
             </button>
           </div>
         </form>

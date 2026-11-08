@@ -3,19 +3,19 @@ import Spacer from '../../../../components/Spacer'
 
 const stages = [
   {
-    title: '1. Alignment & Strategy',
+    title: '1. Understand.',
     description:
-      "We start by deeply understanding your business goals. Through collaborative workshops, we define the problem, map the strategy, and ensure we're set up for success.",
+      'Workshops first, code later. We learn your business goals, define the problem together and agree on a strategy before anyone opens an editor.',
   },
   {
-    title: '2. Lean Execution',
+    title: '2. Build in short cycles.',
     description:
-      'We work in iterative cycles, delivering tangible progress every two weeks. This keeps you in the loop, allows for quick feedback, and ensures we’re always focused on the highest-value work.',
+      'Every two weeks you see working progress. You react, we adjust, and the most valuable work always goes first.',
   },
   {
-    title: '3. Seamless Handover & Support',
+    title: '3. Hand over.',
     description:
-      'Our goal is to make you self-sufficient. We ensure a smooth transition with thorough documentation, training, and post-launch support to empower your team for the long term.',
+      'Our job is to make ourselves unnecessary. Documentation, training and post-launch support, so your team knows where every wire goes.',
   },
 ]
 
@@ -33,11 +33,9 @@ const Process: React.FC = () => {
 
   return (
     <>
-      <div className="section">Our Engagement Model</div>
+      <div className="section">How we work.</div>
       <Spacer size="medium" />
-      <div className="subtitle">
-        A transparent, collaborative, and lean process designed for results.
-      </div>
+      <div className="subtitle">Three steps. Out in the open.</div>
       <Spacer size="medium" />
       <div className="w-full">
         <div className="hidden relative md:grid grid-cols-2 gap-x-large gap-y-small after:absolute after:top-0 after:bottom-0 after:left-1/2 after:w-1 after:-ml-0.5 after:bg-black">

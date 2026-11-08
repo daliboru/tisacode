@@ -15,8 +15,9 @@ const inter = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Tisacode',
-  description: 'SOFTWARE | PRODUCT | AI | LEAN',
+  title: 'Tisacode - product engineering for tech businesses',
+  description:
+    'We build new software products for tech businesses and rewire the ones already running. MVPs, audits, legacy modernisation, team enablement.',
 }
 
 export default function RootLayout({

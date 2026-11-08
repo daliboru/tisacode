@@ -4,14 +4,14 @@ import Spacer from '../../../../components/Spacer'
 const CTA: React.FC = () => {
   return (
     <>
-      <div className="section">Ready to turn your tech challenges into growth opportunities?</div>
+      <div className="section">Every system has a switch nobody touches.</div>
       <Spacer size="medium" />
       <div className="flex justify-center">
         <a
           href="#contact"
           className="bg-black text-white py-3 px-6 rounded-lg text-lg font-semibold"
         >
-          {"Let's Talk"}
+          {'Show us yours →'}
         </a>
       </div>
       <Spacer size="large" />
