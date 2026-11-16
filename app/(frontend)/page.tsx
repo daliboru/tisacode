@@ -4,6 +4,7 @@ import ContactForm from '../../components/ContactForm'
 import Logo from '../../components/Logo'
 import Menu from '../../components/Menu'
 import Spacer from '../../components/Spacer'
+import backgroundImage from '../../public/images/background.jpg'
 import CTA from './_components/landing/CTA'
 import Footer from './_components/landing/Footer'
 import Process from './_components/landing/Process'
@@ -43,11 +44,12 @@ const HomePage: React.FC = () => {
       {/* Right static panel */}
       <div className="relative w-full md:w-1/2 px-small py-medium md:p-medium">
         <Image
-          src="/images/background.jpg"
+          src={backgroundImage}
           alt="background"
           fill
           className="object-cover"
           sizes="50vw"
+          placeholder="blur"
           priority
         />
         <div className="relative action">Wired to be rewired.</div>

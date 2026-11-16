@@ -5,6 +5,7 @@ import React from 'react'
 import Logo from '../../../components/Logo'
 import Menu from '../../../components/Menu'
 import Spacer from '../../../components/Spacer'
+import ourProductsImage from '../../../public/images/our-products.webp'
 import Footer from '../_components/landing/Footer'
 import SpeakXCaseStudy from '../_components/our-products/SpeakXCaseStudy'
 
@@ -41,11 +42,13 @@ const OurProductsPage: React.FC = () => {
       {/* Right static panel */}
       <div className="relative w-full md:w-1/2 px-small py-medium md:p-medium">
         <Image
-          src="/images/our-products.webp"
+          src={ourProductsImage}
           alt=""
           fill
           className="object-cover"
           sizes="50vw"
+          quality={60}
+          placeholder="blur"
           priority
         />
         <div className="relative action !text-black">Start at the last chapter.</div>

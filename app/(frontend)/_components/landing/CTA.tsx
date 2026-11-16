@@ -19,6 +19,7 @@ const CTA: React.FC = () => {
         <iframe
           src="https://giphy.com/embed/mi6DsSSNKDbUY"
           className="absolute w-full h-full "
+          loading="lazy"
           allowFullScreen
           title="Rocket launch"
         />

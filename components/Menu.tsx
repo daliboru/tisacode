@@ -5,15 +5,15 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 const Menu: React.FC = () => {
-  const [openDropdown, setOpenDropdown] = useState<'workshops' | 'products' | null>(null)
+  const [showProductsMenu, setShowProductsMenu] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
 
-  // Close the open dropdown when clicking outside of it
+  // Close the products dropdown when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!(event.target as Element).closest('[data-dropdown]')) {
-        setOpenDropdown(null)
+        setShowProductsMenu(false)
       }
     }
 
@@ -110,34 +110,11 @@ const Menu: React.FC = () => {
         <li className="relative mb-3 md:mb-0" data-dropdown>
           <button
             className="hover:text-orange-dark transition w-full text-left"
-            onClick={() => setOpenDropdown(openDropdown === 'workshops' ? null : 'workshops')}
-          >
-            Workshops
-          </button>
-          {openDropdown === 'workshops' && (
-            <ul
-              className="md:absolute md:right-0 md:mt-2 md:py-2 md:w-48 md:bg-white md:shadow-lg md:rounded-lg md:z-10 md:border md:border-gray-200
-                           mt-2 px-4 border-l border-gray-200"
-            >
-              <li>
-                <Link
-                  href="/startup-workshop"
-                  className="block px-4 py-2 hover:bg-gray-100 transition"
-                >
-                  AI-Era Startup Workshop
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li className="relative mb-3 md:mb-0" data-dropdown>
-          <button
-            className="hover:text-orange-dark transition w-full text-left"
-            onClick={() => setOpenDropdown(openDropdown === 'products' ? null : 'products')}
+            onClick={() => setShowProductsMenu(!showProductsMenu)}
           >
             Products
           </button>
-          {openDropdown === 'products' && (
+          {showProductsMenu && (
             <ul
               className="md:absolute md:right-0 md:mt-2 md:py-2 md:w-48 md:bg-white md:shadow-lg md:rounded-lg md:z-10 md:border md:border-gray-200
                            mt-2 px-4 border-l border-gray-200"
@@ -147,7 +124,7 @@ const Menu: React.FC = () => {
                   href="/our-products"
                   className="block px-4 py-2 hover:bg-gray-100 transition"
                   onClick={() => {
-                    setOpenDropdown(null)
+                    setShowProductsMenu(false)
                     setMobileMenuOpen(false)
                   }}
                 >
