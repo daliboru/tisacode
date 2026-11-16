@@ -2,19 +2,18 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Menu: React.FC = () => {
-  const [showWorkshopsMenu, setShowWorkshopsMenu] = useState(false)
-  const workshopsMenuRef = useRef<HTMLLIElement>(null)
+  const [openDropdown, setOpenDropdown] = useState<'workshops' | 'products' | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
 
-  // Close workshops dropdown when clicking outside
+  // Close the open dropdown when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (workshopsMenuRef.current && !workshopsMenuRef.current.contains(event.target as Node)) {
-        setShowWorkshopsMenu(false)
+      if (!(event.target as Element).closest('[data-dropdown]')) {
+        setOpenDropdown(null)
       }
     }
 
@@ -108,14 +107,14 @@ const Menu: React.FC = () => {
         }
       `}
       >
-        <li className="relative mb-3 md:mb-0" ref={workshopsMenuRef}>
+        <li className="relative mb-3 md:mb-0" data-dropdown>
           <button
             className="hover:text-orange-dark transition w-full text-left"
-            onClick={() => setShowWorkshopsMenu(!showWorkshopsMenu)}
+            onClick={() => setOpenDropdown(openDropdown === 'workshops' ? null : 'workshops')}
           >
             Workshops
           </button>
-          {showWorkshopsMenu && (
+          {openDropdown === 'workshops' && (
             <ul
               className="md:absolute md:right-0 md:mt-2 md:py-2 md:w-48 md:bg-white md:shadow-lg md:rounded-lg md:z-10 md:border md:border-gray-200
                            mt-2 px-4 border-l border-gray-200"
@@ -126,6 +125,33 @@ const Menu: React.FC = () => {
                   className="block px-4 py-2 hover:bg-gray-100 transition"
                 >
                   AI-Era Startup Workshop
+                </Link>
+              </li>
+            </ul>
+          )}
+        </li>
+        <li className="relative mb-3 md:mb-0" data-dropdown>
+          <button
+            className="hover:text-orange-dark transition w-full text-left"
+            onClick={() => setOpenDropdown(openDropdown === 'products' ? null : 'products')}
+          >
+            Products
+          </button>
+          {openDropdown === 'products' && (
+            <ul
+              className="md:absolute md:right-0 md:mt-2 md:py-2 md:w-48 md:bg-white md:shadow-lg md:rounded-lg md:z-10 md:border md:border-gray-200
+                           mt-2 px-4 border-l border-gray-200"
+            >
+              <li>
+                <Link
+                  href="/our-products"
+                  className="block px-4 py-2 hover:bg-gray-100 transition"
+                  onClick={() => {
+                    setOpenDropdown(null)
+                    setMobileMenuOpen(false)
+                  }}
+                >
+                  Speak-X
                 </Link>
               </li>
             </ul>
